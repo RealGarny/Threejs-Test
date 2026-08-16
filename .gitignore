@@ -16,6 +16,8 @@
 .env*.local
 .env
 
+/.vscode
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
