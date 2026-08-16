@@ -1,5 +1,9 @@
+import type { FC } from "react";
+
 type TScene = {
-  canvasRef: React.RefObject<HTMLCanvasElement>;
+	canvasRef: React.RefObject<HTMLCanvasElement>;
 };
 
-export type { TScene };
+type SceneComponent = FC<TScene>;
+
+export type { SceneComponent, TScene };

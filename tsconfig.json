@@ -1,25 +1,24 @@
 {
-    "compilerOptions": {
-        "target": "ES5",
-        "module": "ESNext",
-        "allowJs": true,
-        "outDir": "./dist/",
-        "baseUrl": ".",
-        "paths": {
-            "*": ["./src/*"]
-        },
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "moduleResolution": "Node",
-        "jsx": "react-jsx",
-        "strict": true,
-        "noImplicitAny": true,
-        "skipLibCheck": true
-    },
-    "ts-node": {
-        "compilerOptions": {
-            "module": "CommonJS"
-        }
-    }
+	"compilerOptions": {
+		"target": "es2020",
+		"module": "esnext",
+		"allowJs": true,
+		"outDir": "./dist/",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "bundler",
+		"jsx": "react-jsx",
+		"strict": true,
+		"noImplicitAny": true,
+		"skipLibCheck": true
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
 }
