@@ -32,8 +32,8 @@ export const GalaxyScene: FC<TScene> = ({ canvasRef }) => {
 
 		const particleColors = new Float32Array(parameters.particleCount * 3);
 		const particlePositions = new Float32Array(parameters.particleCount * 3);
-		const { branches, randomnessPower, radius, spin, particleCount } =
-			parameters;
+		const { branches, randomnessPower, radius, spin, particleCount } = parameters;
+
 		for (let i = 0; i < particleCount; i++) {
 			const pointRadius = Math.random() * radius;
 			const pointSpin = pointRadius * spin;

@@ -7,9 +7,6 @@ import { FlagMesh } from "./meshes/FlagMesh";
 export const ShadersScene: FC<TScene> = ({ canvasRef }) => {
 	const { camera } = useThree();
 	new OrbitControls(camera, canvasRef.current);
-	return (
-		<>
-			<FlagMesh />
-		</>
-	);
+
+	return <FlagMesh />;
 };
