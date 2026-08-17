@@ -1,9 +1,4 @@
-import {
-	type MeshProps,
-	useFrame,
-	useLoader,
-	useThree,
-} from "@react-three/fiber";
+import { type MeshProps, useFrame, useLoader } from "@react-three/fiber";
 import { type FC, useEffect, useMemo, useRef } from "react";
 import {
 	DoubleSide,
@@ -19,9 +14,6 @@ import coffeeSmokeVertexShader from "@/shaders/coffeeMug/smoke/vertex.glsl";
 const PERLIN_NOISE_PATH = "/public/png/noiseMaps/perlin.png";
 
 export const Smoke: FC<MeshProps> = (props) => {
-	useThree(({ gl }) => {
-		gl.setClearColor("#000");
-	});
 	const perlinNoise = useLoader(TextureLoader, PERLIN_NOISE_PATH);
 
 	const smokeUniforms = useRef<Record<string, IUniform>>({
