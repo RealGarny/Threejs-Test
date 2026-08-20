@@ -2,24 +2,20 @@ import type { SceneComponent } from "@/shared/types/sceneTypes";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import { AdditiveBlending, DoubleSide, IUniform, Mesh, ShaderMaterial, Uniform } from "three";
-import { GLTFLoader, OrbitControls } from "three/examples/jsm/Addons.js";
+import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import hologramVertexShader from "@/shaders/hologramShader/vertex.glsl";
 import hologramFragmentShader from "@/shaders/hologramShader/fragment.glsl";
+import { OrbitControls } from "@/shared/components/OrbitControls";
 
 const SUZANNE_PATH = "/public/models/suzanne.glb";
 
-export const SceneHologramShader: SceneComponent = ({ canvasRef }) => {
+export const SceneHologramShader: SceneComponent = () => {
+	useThree((state) => state.gl.setClearColor("rgba(22, 26, 26, 1)"));
+
 	const rotatingRefs = useRef<(Mesh | null)[]>([]);
 	const hologramUniforms = useRef<Record<string, IUniform>>({
 		uTime: new Uniform(0),
 	});
-
-	useThree((state) => state.gl.setClearColor("rgba(22, 26, 26, 1)"));
-	const camera = useThree((c) => c.camera);
-
-	useEffect(() => {
-		new OrbitControls(camera, canvasRef.current);
-	}, [camera, canvasRef.current]);
 
 	const suzanneGLTF = useLoader(GLTFLoader, SUZANNE_PATH);
 
@@ -59,6 +55,7 @@ export const SceneHologramShader: SceneComponent = ({ canvasRef }) => {
 
 	return (
 		<>
+			<OrbitControls />
 			<mesh
 				material={hologramMaterial}
 				position={[-3, 0, 0]}
