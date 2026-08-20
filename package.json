@@ -4,10 +4,6 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"lint:scss": "stylelint \"**/*.scss\"",
-		"lint:scss:fix": "stylelint \"**/*.scss\" --fix",
-		"lint:ts": "eslint src",
-		"lint:ts:fix": "eslint src --fix",
 		"start": "webpack serve --env port=3000",
 		"build:prod": "webpack --env mode=production",
 		"build:dev": "webpack --env mode=development"

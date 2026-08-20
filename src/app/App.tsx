@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import "./styles/index.scss";
 import { useRef } from "react";
-import { SceneHologramShader } from "@/scenes/HologramShader";
+import { SceneFireworks } from "@/scenes/Fireworks";
 
 export const App: React.FC = () => {
 	const canvas = useRef<HTMLCanvasElement>(null);
@@ -14,7 +14,7 @@ export const App: React.FC = () => {
 			camera={{ position: [2, 2, 5] }}
 			shadows
 		>
-			<SceneHologramShader canvasRef={canvas} />
+			<SceneFireworks canvasRef={canvas} />
 		</Canvas>
 	);
 };
