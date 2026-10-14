@@ -1,11 +1,11 @@
-import type { SceneComponent } from "@/shared/types/sceneTypes";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import { AdditiveBlending, DoubleSide, type IUniform, Mesh, ShaderMaterial, Uniform } from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
-import hologramVertexShader from "@/shaders/hologramShader/vertex.glsl";
 import hologramFragmentShader from "@/shaders/hologramShader/fragment.glsl";
+import hologramVertexShader from "@/shaders/hologramShader/vertex.glsl";
 import { OrbitControls } from "@/shared/components/OrbitControls";
+import type { SceneComponent } from "@/shared/types/sceneTypes";
 
 const SUZANNE_PATH = "/public/models/suzanne.glb";
 
