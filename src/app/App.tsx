@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import "./styles/index.scss";
 import { useRef } from "react";
-import { SceneHalftone } from "@/scenes/Halftone";
+import { SceneEarth } from "@/scenes/Earth";
 
 export const App: React.FC = () => {
 	const canvas = useRef<HTMLCanvasElement>(null);
@@ -14,7 +14,7 @@ export const App: React.FC = () => {
 			camera={{ position: [2, 2, 5] }}
 			shadows
 		>
-			<SceneHalftone canvasRef={canvas} />
+			<SceneEarth canvasRef={canvas} />
 		</Canvas>
 	);
 };
